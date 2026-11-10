@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - The Luxury Lounge</title>
+    <meta name="description" content="Product details from The Luxury Lounge, premium home decor in Gaborone, Botswana.">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .product-gallery {
+            margin-bottom: 30px;
+        }
+        
+        .product-gallery .main-image {
+            margin-bottom: 15px;
+            border: 1px solid #eee;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .product-gallery .thumbnails {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .product-gallery .thumbnail {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            cursor: pointer;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+        
+        .product-gallery .thumbnail:hover {
+            border-color: #333;
+        }
+        
+        .product-info .price {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #333;
+            margin: 20px 0;
+        }
+        
+        .product-info .old-price {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 1.2rem;
+            margin-left: 10px;
+        }
+        
+        .quantity-selector {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+        }
+        
+        .product-actions .btn {
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .product-tabs {
+            margin: 50px 0;
+        }
+        
+        .product-tabs .nav-link {
+            color: #333;
+            font-weight: 500;
+        }
+        
+        .product-tabs .nav-link.active {
+            font-weight: 600;
+            color: #007bff;
+        }
+        
+        .related-products .card {
+            border: none;
+            margin-bottom: 20px;
+        }
+        
+        .related-products .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .review-item {
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .review-item:last-child {
+            border-bottom: none;
+        }
+        
+        .review-author {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .review-date {
+            color: #999;
+            font-size: 0.9rem;
+        }
+        
+        .rating {
+            color: #ffc107;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/collections/logo-removebg-preview.png" alt="The Luxury Lounge" height="40">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="shop.html">Shop</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <div class="d-flex">
+                    <form class="d-flex me-2" action="shop.html" method="get">
+                        <input class="form-control me-2" type="search" name="q" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-light" type="submit" aria-label="Search"><i class="fas fa-search"></i></button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Product Detail Section -->
+    <section class="py-5 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="product-gallery">
+                        <div class="main-image">
+                            <img src="images/collections/product1 (2).jpg" alt="Luxury Armchair" class="img-fluid w-100" id="mainImage">
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="product-info">
+                        <h1 id="productName">Luxury Velvet Armchair</h1>
+                        <div class="rating mb-3" id="productRating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                            <span class="ms-2">(24 reviews)</span>
+                        </div>
+                        <div class="price" id="productPrice">
+                            P5,443 <span class="old-price">P6,138</span>
+                        </div>
+
+                        <p id="productDesc">Elevate your living space with our premium velvet armchair, combining timeless elegance with modern comfort. Perfect for creating a sophisticated lounge area or as an accent piece in your bedroom.</p>
+
+                        <div class="quantity-selector">
+                            <label for="quantity" class="me-3 mb-0">Quantity</label>
+                            <input type="number" id="quantity" class="form-control" value="1" min="1" max="20" style="width: 90px;">
+                        </div>
+                        <div class="product-actions">
+                            <a id="orderBtn" class="btn btn-primary btn-lg" href="#" target="_blank" rel="noopener"><i class="fab fa-whatsapp me-2"></i>Order on WhatsApp</a>
+                            <a href="shop.html" class="btn btn-outline-dark btn-lg">Back to Shop</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Tabs -->
+            <div class="product-tabs">
+                <ul class="nav nav-tabs" id="productTabs" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="description-tab" data-bs-toggle="tab" data-bs-target="#description" type="button" role="tab">Description</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="specs-tab" data-bs-toggle="tab" data-bs-target="#specs" type="button" role="tab">Specifications</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="reviews-tab" data-bs-toggle="tab" data-bs-target="#reviews" type="button" role="tab">Reviews (24)</button>
+                    </li>
+                </ul>
+                <div class="tab-content p-4 border border-top-0" id="productTabsContent">
+                    <div class="tab-pane fade show active" id="description" role="tabpanel">
+                        <h4>Product Description</h4>
+                        <p>The Luxury Velvet Armchair is a statement piece designed to bring elegance and comfort to any space. Featuring a solid hardwood frame with tapered legs, this armchair is upholstered in premium velvet fabric that's both luxurious and durable.</p>
+                        <p>The generous seat cushion is filled with high-density foam and fiber for optimal support, while the backrest offers just the right amount of give for comfortable lounging. The slightly reclined back and gently curved armrests create an inviting silhouette that complements both modern and traditional decor styles.</p>
+                        <p>Available in three rich color options, this armchair is perfect for creating a cozy reading nook, enhancing your living room seating, or adding a touch of sophistication to your bedroom.</p>
+                    </div>
+                    <div class="tab-pane fade" id="specs" role="tabpanel">
+                        <h4>Product Specifications</h4>
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <th>Dimensions</th>
+                                    <td>Width: 75cm | Depth: 85cm | Height: 95cm | Seat Height: 45cm</td>
+                                </tr>
+                                <tr>
+                                    <th>Weight</th>
+                                    <td>25kg</td>
+                                </tr>
+                                <tr>
+                                    <th>Frame Material</th>
+                                    <td>Solid hardwood with reinforced joints</td>
+                                </tr>
+                                <tr>
+                                    <th>Upholstery</th>
+                                    <td>Premium velvet fabric (100% polyester)</td>
+                                </tr>
+                                <tr>
+                                    <th>Cushioning</th>
+                                    <td>High-density foam with fiber wrap</td>
+                                </tr>
+                                <tr>
+                                    <th>Legs</th>
+                                    <td>Solid wood with protective felt pads</td>
+                                </tr>
+                                <tr>
+                                    <th>Assembly</th>
+                                    <td>Required (legs attachment), tools included</td>
+                                </tr>
+                                <tr>
+                                    <th>Care Instructions</th>
+                                    <td>Spot clean with mild detergent, avoid direct sunlight</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="tab-pane fade" id="reviews" role="tabpanel">
+                        <h4>Customer Reviews</h4>
+                        <div class="review-item">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h5 class="review-author">Thato M.</h5>
+                            <p class="review-date">Reviewed on May 15, 2025</p>
+                            <p>"Absolutely love this armchair! The velvet is so soft and luxurious, and the color is even more beautiful in person. It's become the favorite spot in my living room."</p>
+                        </div>
+                        <div class="review-item">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <h5 class="review-author">Kabelo P.</h5>
+                            <p class="review-date">Reviewed on May 28, 2025</p>
+                            <p>"Very comfortable and stylish. Assembly was straightforward. Only minor complaint is that it's a bit heavy to move around, but that also speaks to its solid construction."</p>
+                        </div>
+                        <div class="review-item">
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h5 class="review-author">Amantle B.</h5>
+                            <p class="review-date">Reviewed on May 10, 2025</p>
+                            <p>"This armchair exceeded my expectations. The quality is exceptional for the price. It arrived well-packaged with no damage. Highly recommend!"</p>
+                        </div>
+                        <button class="btn btn-outline-primary mt-3" data-bs-toggle="modal" data-bs-target="#reviewModal">Write a Review</button>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Review Modal -->
+    <div class="modal fade" id="reviewModal" tabindex="-1" aria-labelledby="reviewModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="reviewModalLabel">Write a Review</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="reviewForm">
+                        <div class="mb-3">
+                            <label for="reviewName" class="form-label">Your Name</label>
+                            <input type="text" class="form-control" id="reviewName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="reviewRating" class="form-label">Rating</label>
+                            <select class="form-select" id="reviewRating" required>
+                                <option value="">Select rating</option>
+                                <option value="5">5 Stars</option>
+                                <option value="4">4 Stars</option>
+                                <option value="3">3 Stars</option>
+                                <option value="2">2 Stars</option>
+                                <option value="1">1 Star</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="reviewText" class="form-label">Your Review</label>
+                            <textarea class="form-control" id="reviewText" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit Review</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white pt-5 pb-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>The Luxury Lounge</h5>
+                    <p>Redefining modern sophistication with timeless elegance and contemporary functionality.</p>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-white">Home</a></li>
+                        <li><a href="shop.html" class="text-white">Shop</a></li>
+                        <li><a href="about.html" class="text-white">About Us</a></li>
+                        <li><a href="contact.html" class="text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Contact Us</h5>
+                    <address>
+                        <p><i class="fas fa-map-marker-alt me-2"></i> Gaborone, Botswana</p>
+                        <p><i class="fas fa-phone me-2"></i> +267-78553706</p>
+                        <p><i class="fas fa-envelope me-2"></i> angellamokgosi@gmail.com</p>
+                    </address>
+                </div>
+            </div>
+            <hr class="my-4 bg-light">
+            <p class="mb-0 text-center text-md-start">&copy; <span id="year">2025</span> The Luxury Lounge. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Products that can be opened with product page links like individual-product.html?id=armchair-1
+        var PRODUCTS = {
+            "armchair-1": {name: "Classic Comfort Armchair", price: "P4,076", img: "images/collections/armchair1.jpg", cat: "armchairs"},
+            "armchair-2": {name: "Modern Relax Armchair", price: "P4,762", img: "images/collections/armchair2.jpg", cat: "armchairs"},
+            "armchair-3": {name: "Elegant Lounge Armchair", price: "P5,443", img: "images/collections/armchair3.jpg", cat: "armchairs"},
+            "armchair-4": {name: "Premium Executive Armchair", price: "P6,138", img: "images/collections/armchair4.jpg", cat: "armchairs"},
+            "chandelier-1": {name: "Crystal Elegance Chandelier", price: "P8,176", img: "images/collections/chandelier1.jpg", cat: "lighting"},
+            "chandelier-2": {name: "Modern Glass Chandelier", price: "P9,534", img: "images/collections/chandelier2.jpg", cat: "lighting"},
+            "chandelier-3": {name: "Rustic Metal Chandelier", price: "P10,217", img: "images/collections/chandelier3.jpg", cat: "lighting"},
+            "chandelier-4": {name: "Contemporary Design Chandelier", price: "P10,899", img: "images/collections/chandelier4.jpg", cat: "lighting"},
+            "coffee-table-1": {name: "Modern Glass Coffee Table", price: "P2,715", img: "images/collections/coffee-table1.jpg", cat: "tables"},
+            "coffee-table-2": {name: "Wooden Round Coffee Table", price: "P3,398", img: "images/collections/coffee-table2.jpg", cat: "tables"},
+            "coffee-table-3": {name: "Industrial Metal Coffee Table", price: "P4,076", img: "images/collections/coffee-table3.jpg", cat: "tables"},
+            "coffee-table-4": {name: "Minimalist Wood Coffee Table", price: "P4,774", img: "images/collections/coffee-table4.jpg", cat: "tables"}
+        };
+        var DESCRIPTIONS = {
+            armchairs: "Deep, supportive seating with a hand-finished frame, made for long evenings at home.",
+            lighting: "Statement lighting that sets the mood and gives your room a focal point.",
+            tables: "The centre of the room: solid materials, clean lines and a finish that handles daily use."
+        };
+
+        var product = PRODUCTS[new URLSearchParams(window.location.search).get("id")];
+        if (product) {
+            document.title = product.name + " - The Luxury Lounge";
+            document.getElementById("productName").textContent = product.name;
+            document.getElementById("productPrice").textContent = product.price;
+            document.getElementById("productDesc").textContent = DESCRIPTIONS[product.cat];
+            var img = document.getElementById("mainImage");
+            img.src = product.img;
+            img.alt = product.name;
+            // The rating, specifications and reviews are written for the velvet armchair only
+            document.getElementById("productRating").classList.add("d-none");
+            document.getElementById("specs-tab").parentElement.classList.add("d-none");
+            document.getElementById("reviews-tab").parentElement.classList.add("d-none");
+            var desc = document.getElementById("description");
+            desc.innerHTML = "<h4>Product Description</h4>";
+            var p = document.createElement("p");
+            p.textContent = DESCRIPTIONS[product.cat] + " Contact us for sizes, fabrics, colours and delivery.";
+            desc.appendChild(p);
+        }
+
+        // Order button: sends the product and quantity to WhatsApp (no cart system needed)
+        function updateOrderLink() {
+            var qty = Math.max(1, parseInt(document.getElementById("quantity").value, 10) || 1);
+            var name = document.getElementById("productName").textContent;
+            var price = document.getElementById("productPrice").childNodes[0].textContent.trim();
+            var msg = "Hello, I would like to order " + qty + " x " + name + " (" + price + " each).";
+            document.getElementById("orderBtn").href = "https://wa.me/26778553706?text=" + encodeURIComponent(msg);
+        }
+        document.getElementById("quantity").addEventListener("input", updateOrderLink);
+        updateOrderLink();
+
+        // Review form: shows the new review on this page (it is not saved after a refresh)
+        document.getElementById("reviewForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+            var rating = parseInt(document.getElementById("reviewRating").value, 10);
+            var item = document.createElement("div");
+            item.className = "review-item";
+            var stars = document.createElement("div");
+            stars.className = "rating";
+            for (var i = 0; i < 5; i++) {
+                var star = document.createElement("i");
+                star.className = (i < rating ? "fas" : "far") + " fa-star";
+                stars.appendChild(star);
+            }
+            var author = document.createElement("h5");
+            author.className = "review-author";
+            author.textContent = document.getElementById("reviewName").value;
+            var date = document.createElement("p");
+            date.className = "review-date";
+            date.textContent = "Reviewed on " + new Date().toLocaleDateString("en-GB", {day: "numeric", month: "long", year: "numeric"});
+            var text = document.createElement("p");
+            text.textContent = "\u201C" + document.getElementById("reviewText").value + "\u201D";
+            item.appendChild(stars); item.appendChild(author); item.appendChild(date); item.appendChild(text);
+            var btn = document.querySelector("#reviews .btn");
+            btn.parentNode.insertBefore(item, btn);
+            this.reset();
+            bootstrap.Modal.getOrCreateInstance(document.getElementById("reviewModal")).hide();
+        });
+
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
